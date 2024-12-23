@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 // use App\Models\Admin;
+
+use App\Models\JenisKendaraan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +24,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            AdminSeeder::class,
+            // AdminSeeder::class,
+            JenisKendaraanSeeder::class,
+            KendaraanSeeder::class,
         ]);
     }
 }

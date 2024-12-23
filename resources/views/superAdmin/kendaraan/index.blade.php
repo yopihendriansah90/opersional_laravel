@@ -37,7 +37,7 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->nama}}</td>
+                        <td>{{$row->no_pintu}}</td>
                         <td>{{$row->username}}</td>
                         <td>{{$row->roless}}</td>
                         <td>

@@ -46,7 +46,7 @@
     </div><!-- End Logo -->
 
     <div class="search-bar">
-      <form class="search-form d-flex align-items-center" method="POST" action="#">
+      <form class="search-form d-flex align-items-center" method="GET" action="">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
@@ -294,7 +294,7 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="{{route('kendaraan.data')}}">
           <i class="bi bi-question-circle"></i>
           <span>Data kendaraan</span>
         </a>

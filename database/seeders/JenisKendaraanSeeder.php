@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\JenisKendaraan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,5 +14,11 @@ class JenisKendaraanSeeder extends Seeder
     public function run(): void
     {
         //
+        JenisKendaraan::create([
+            'nama' => 'Truck Mixer',
+        ]);
+        JenisKendaraan::create([
+            'nama' => 'Dump Truck',
+        ]);
     }
 }

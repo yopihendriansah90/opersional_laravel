@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\SuperAdmin\AdminController;
+use App\Http\Controllers\SuperAdmin\KendaraanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,12 +32,13 @@ Route::group([
         Route::view('/', 'dashboard')->name('dashboard');
         // Route::view('/post', 'data-post')->name('post')->middleware('can:role,"admin","editor"');
         Route::view('/admin', 'data-admin')->name('admin')->middleware('can:role,"admin"');
-    });
 
-    Route::middleware(['auth:superadmin'])->group(function () {
         Route::controller(AdminController::class)->group(function () {
             // Route::post('logout', 'Auth\AuthController@logout')->name('superadmin.logout');
             Route::get('/superadmin/user', 'index')->name('user.data');
+        });
+        Route::controller(KendaraanController::class)->group(function () {
+            Route::get('/superadmin/kendaraan', 'index')->name('kendaraan.data');
         });
     });
 });
