@@ -18,8 +18,10 @@
 
           <div class="card-body">
             <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+            {{-- create account button --}}
+            <a href="{{ route('user.create') }}" class="btn btn-success">Create Account</a>
 
-            <table class="table table-borderless datatable">
+            <table class="table table-border datatable">
               <thead>
                 <tr>
                   <th scope="col">No</th>

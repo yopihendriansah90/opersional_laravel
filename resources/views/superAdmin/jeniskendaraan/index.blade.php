@@ -18,7 +18,7 @@
 
           <div class="card-body">
             <h5 class="card-title">Data Jenis Kendaraan <span>| Today</span></h5>
-
+            <a href="{{ route('jeniskendaraan.create') }}" class="btn btn-success">Create Jenis Kendaraan</a>
             <table class="table table-border datatable" style=" width: 100%; white-space: nowrap;">
               <thead>
                 <tr>

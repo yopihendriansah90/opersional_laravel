@@ -15,4 +15,24 @@ class JenisKendraanController extends Controller
         $data = JenisKendaraan::where('nama', 'like', '%' . $query . '%')->get();
         return view('superAdmin.jeniskendaraan.index', compact('data'));
     }
+
+    public function create()
+    {
+        return view('superAdmin.jeniskendaraan.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|unique:jenis_kendaraans,nama'
+        ], [
+            'required' => ':attribute Wajib diisi'
+        ]);
+
+        // return dd($request->all());
+        JenisKendaraan::create([
+            'nama' => $request->nama
+        ]);
+        return redirect()->route('jeniskendaraan.data')->with('success', 'Data berhasil ditambahkan');
+    }
 }
