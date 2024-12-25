@@ -11,6 +11,7 @@ class Kendaraan extends Model
     protected $guarded = [];
     public function jeniskendaraan()
     {
-        $this->hasMany(JenisKendaraan::class, 'id_jenis_kendaraan', 'id'); // menghubungkan foreigen key dari kendaraan (id_jenis_kendaraan) ke table jenis kendaraan
+        // $this->hasMany(JenisKendaraan::class, 'id_jenis_kendaraan', 'id'); // menghubungkan foreigen key dari kendaraan (id_jenis_kendaraan) ke table jenis kendaraan
+        return $this->belongsTo(JenisKendaraan::class, 'id_jenis_kendaraan', 'id');
     }
 }

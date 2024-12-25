@@ -17,20 +17,20 @@
           </div> --}}
 
           <div class="card-body">
-            <h5 class="card-title">Data Kendaraan <span>| Today</span></h5>
+            <h5 class="card-title">Data Driver <span>| Today</span></h5>
 
             <table class="table table-border datatable" style=" width: 100%; white-space: nowrap;">
               <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Nomor Pintu</th>
-                  <th scope="col">Jenis Kendaraan</th>
-                  <th scope="col">Nomor Polisi</th>
-                  <th scope="col">Warna Kendaraan</th>
-                  <th scope="col">Warna TNKB</th>
-                  <th scope="col">Nomor Rangka</th>
-                  <th scope="col">Nomor Mesin</th>
-                  <th scope="col">Isi Sislinder</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Nama Driver</th>
+                  <th scope="col">Nomor KTP</th>
+                  <th scope="col">Foto KTP</th>
+                  <th scope="col">Nomor HP</th>
+                  <th scope="col">Alamat</th>
+                  <th scope="col">Email</th>
+
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -42,15 +42,14 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->no_pintu}}</td>
-                        <td>{{$row->Jeniskendaraan->nama}}</td>
+                        <td>{{$row->useradmin->username}}</td>
+                        <td>{{$row->nama}}</td>
+                        <td>{{$row->no_ktp}}</td>
+                        <td>{{$row->foto_ktp}}</td>
+                        <td>{{$row->no_hp}}</td>
+                        <td>{{$row->alamat}}</td>
+                        <td>{{$row->email}}</td>
 
-                        <td>{{$row->no_polisi}}</td>
-                        <td>{{$row->warna_kendaraan}}</td>
-                        <td>{{$row->warna_tnbk}}</td>
-                        <td>{{$row->no_rangka}}</td>
-                        <td>{{$row->no_mesin}}</td>
-                        <td>{{$row->isi_silinder}} CC</td>
                         <td>
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>

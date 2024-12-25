@@ -234,16 +234,7 @@
                 <span>Account Settings</span>
               </a>
             </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -293,15 +284,29 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
+
+      {{-- Menu Kendadraan --}}
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('kendaraan.data')}}">
-          <i class="bi bi-question-circle"></i>
-          <span>Data kendaraan</span>
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-truck"></i><span>Kendaraan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{route('jeniskendaraan.data')}}">
+              <i class="bi bi-circle"></i><span>Data Jenis Kendaraan</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('kendaraan.data')}}">
+              <i class="bi bi-circle"></i><span>Data Kendaraan</span>
+            </a>
+          </li>
+        </ul>
+        {{--Akhir Menu Kendaraan --}}
+
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="{{route('driver.data')}}">
           <i class="bi bi-envelope"></i>
           <span>Deriver</span>
         </a>
@@ -329,15 +334,11 @@
 
  <!-- ======= Footer ======= -->
  <footer id="footer" class="footer">
-    <div class="copyright">
+    {{-- <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
+    </div> --}}
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Created by <a href="https://www.linkedin.com/in/yopihendriansah" target="blank">Yopi Hendriansah</a>
     </div>
   </footer><!-- End Footer -->
 

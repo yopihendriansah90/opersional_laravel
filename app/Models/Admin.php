@@ -17,4 +17,9 @@ class Admin extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function admindriver() // buat fungsi
+    {
+        // $this->belongsTo(Driver::class, 'id_user', 'id'); //mendeklarasikan forigen key jenisk kendaraan
+        return $this->hasOne(Driver::class . 'id_user', 'id');
+    }
 }

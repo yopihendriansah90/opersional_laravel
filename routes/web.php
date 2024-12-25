@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\SuperAdmin\AdminController;
+use App\Http\Controllers\SuperAdmin\DriverController;
+use App\Http\Controllers\SuperAdmin\JenisKendraanController;
 use App\Http\Controllers\SuperAdmin\KendaraanController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,12 @@ Route::group([
         });
         Route::controller(KendaraanController::class)->group(function () {
             Route::get('/superadmin/kendaraan', 'index')->name('kendaraan.data');
+        });
+        Route::controller(JenisKendraanController::class)->group(function () {
+            Route::get('/superadmin/jeniskendaraan', 'index')->name('jeniskendaraan.data');
+        });
+        Route::controller(DriverController::class)->group(function () {
+            Route::get('/superadmin/driver', 'index')->name('driver.data');
         });
     });
 });

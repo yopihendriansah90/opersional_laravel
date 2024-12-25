@@ -11,6 +11,7 @@ class JenisKendaraan extends Model
     protected $guarded = []; //dibuat
     public function kendaraan() // buat fungsi
     {
-        $this->belongsTo(kendaraan::class, 'id_jenis_kendaraan', 'id'); //mendeklarasikan forigen key jenisk kendaraan
+        // $this->belongsTo(Kendaraan::class, 'id_jenis_kendaraan', 'id'); //mendeklarasikan forigen key jenisk kendaraan
+        return  $this->hasMany(Kendaraan::class, 'id_jenis_kendaraan', 'id');
     }
 }
