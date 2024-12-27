@@ -13,6 +13,10 @@ class Driver extends Model
     {
         // $this->hasMany(Admin::class, 'id_user', 'id'); // menghubungkan foreigen key dari kendaraan (id_jenis_kendaraan) ke table jenis kendaraan
         return $this->belongsTo(Admin::class, 'id_user', 'id');
-        return $this->belongsTo(DriverKendaraan::class, 'id_user', 'id');
+    }
+    public function driverkendaraan()
+    {
+        // $this->hasMany(Admin::class, 'id_user', 'id'); // menghubungkan foreigen key dari kendaraan (id_jenis_kendaraan) ke table jenis kendaraan
+        return $this->hasMany(DriverKendaraan::class, 'id_driver', 'id');
     }
 }

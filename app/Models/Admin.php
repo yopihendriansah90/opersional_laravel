@@ -22,6 +22,10 @@ class Admin extends Authenticatable
         // $this->belongsTo(Driver::class, 'id_user', 'id'); //mendeklarasikan forigen key jenisk kendaraan
         return $this->hasOne(Driver::class . 'id_user', 'id');
     }
+    public function driverkendraan()
+    {
+        return $this->hasMany(DriverKendaraan::class, 'id_user', 'id');
+    }
 
     public function isRole($roles)
     {

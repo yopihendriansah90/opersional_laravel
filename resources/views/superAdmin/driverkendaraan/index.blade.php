@@ -23,8 +23,9 @@
               <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Username</th>
+                  <th scope="col">Kendaraan</th>
                   <th scope="col">Nama Driver</th>
+                  <th scope="col">Username</th>
                   <th scope="col">Nomor KTP</th>
                   <th scope="col">Foto KTP</th>
                   <th scope="col">Nomor HP</th>
@@ -42,9 +43,10 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->useradmin->username}}</td>
-                        <td>{{$row->nama}}</td>
-                        <td>{{$row->no_ktp}}</td>
+                        <td>{{$row->id_kendaraan}}</td>
+                        <td>{{$row->id_driver}}</td>
+                        <td>{{$row->driver->nama}}</td>
+                        <td>{{$row->tipe_driver}}</td>
                         <td>{{$row->foto_ktp}}</td>
                         <td>{{$row->no_hp}}</td>
                         <td>{{$row->alamat}}</td>

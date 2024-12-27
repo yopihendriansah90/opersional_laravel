@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DriverKendaraan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,15 @@ class DriverKendaraanSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DriverKendaraan::create([
+            'id_kendaraan' => 1,
+            'id_driver' => 1,
+            'tipe_driver' => 'tetap',
+        ]);
+        DriverKendaraan::create([
+            'id_kendaraan' => 2,
+            'id_driver' => 2,
+            'tipe_driver' => 'cadangan',
+        ]);
     }
 }

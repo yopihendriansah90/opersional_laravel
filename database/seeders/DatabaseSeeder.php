@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 // use App\Models\Admin;
 
+use App\Models\DriverKendaraan;
 use App\Models\JenisKendaraan;
 use Illuminate\Database\Seeder;
 
@@ -24,10 +25,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            AdminSeeder::class,
-            JenisKendaraanSeeder::class,
-            KendaraanSeeder::class,
-            DriverSeeder::class,
+            // AdminSeeder::class,
+            //     JenisKendaraanSeeder::class,
+            //     KendaraanSeeder::class,
+            DriverKendaraanSeeder::class,
         ]);
     }
 }
