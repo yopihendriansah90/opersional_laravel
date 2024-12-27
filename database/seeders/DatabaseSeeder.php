@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 // use App\Models\Admin;
 
+use App\Models\DriverKendaraan;
 use App\Models\JenisKendaraan;
 use Illuminate\Database\Seeder;
 
@@ -27,7 +28,7 @@ class DatabaseSeeder extends Seeder
             // AdminSeeder::class,
             //     JenisKendaraanSeeder::class,
             //     KendaraanSeeder::class,
-            DriverSeeder::class,
+            DriverKendaraanSeeder::class,
         ]);
     }
 }
