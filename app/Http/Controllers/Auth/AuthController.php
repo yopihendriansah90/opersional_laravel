@@ -21,13 +21,13 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'username' => 'required|exists:admins',
-            'password' => 'required'
+            'username' => 'required',
+            'password' => 'required',
         ]);
 
-        if (Auth::guard('admin')->attempt($credentials, $request->remember)) {
+        if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(config('admin.prefix'));
+            return redirect('/');
         }
 
         return back()->withErrors([
@@ -35,9 +35,12 @@ class AuthController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin.login');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');
     }
 }

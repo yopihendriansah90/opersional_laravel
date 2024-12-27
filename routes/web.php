@@ -24,7 +24,7 @@ Route::group([
 ], function () {
     Route::controller(AuthController::class)->group(function () {
 
-        Route::get('login', 'formLogin')->name('admin.login');
+        Route::get('login', 'formLogin')->name('login');
         Route::post('login', 'login');
     });
 
@@ -38,7 +38,7 @@ Route::group([
         // ADMIN
         Route::controller(AdminController::class)->group(function () {
             // Route::post('logout', 'Auth\AuthController@logout')->name('superadmin.logout');
-            Route::get('/superadmin/user', 'index')->name('user.data');
+            Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin');
             Route::get('/superadmin/user/create', 'create')->name('user.create');
             Route::post('/superadmin/user/create', 'store');
         });
@@ -59,4 +59,6 @@ Route::group([
             Route::get('/superadmin/driver', 'index')->name('driver.data');
         });
     });
+
+    // Route::middleware('auth:admin', 'role:superadmin')->co
 });

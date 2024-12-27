@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            // AdminSeeder::class,
-            //     JenisKendaraanSeeder::class,
-            //     KendaraanSeeder::class,
+            AdminSeeder::class,
+            JenisKendaraanSeeder::class,
+            KendaraanSeeder::class,
             DriverSeeder::class,
         ]);
     }
