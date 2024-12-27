@@ -43,7 +43,7 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->id_kendaraan}}</td>
+                        <td>{{$row->kendaraan->id}}</td>
                         <td>{{$row->id_driver}}</td>
                         <td>{{$row->driver->nama}}</td>
                         <td>{{$row->tipe_driver}}</td>

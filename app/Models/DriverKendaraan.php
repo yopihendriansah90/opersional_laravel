@@ -18,7 +18,7 @@ class DriverKendaraan extends Model
     public function kendaraan() // buat fungsi
     {
         // $this->belongsTo(Driver::class, 'id_user', 'id'); //mendeklarasikan forigen key jenisk kendaraan
-        return $this->hasOne(Kendaraan::class, 'id_kendraan', 'id');
+        return $this->belongsTo(Kendaraan::class, 'id_kendraan', 'id');
     }
 
     public function user()
