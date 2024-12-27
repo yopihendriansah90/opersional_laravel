@@ -39,7 +39,7 @@ Route::group([
         // ADMIN
         Route::controller(AdminController::class)->group(function () {
             // Route::post('logout', 'Auth\AuthController@logout')->name('superadmin.logout');
-            Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin');
+            Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin,admin'); //middleware('roles:superadmin,admin') penggunaan untuk menambahkan akses yang di setujui
             Route::get('/superadmin/user/create', 'create')->name('user.create');
             Route::post('/superadmin/user/create', 'store');
         });
