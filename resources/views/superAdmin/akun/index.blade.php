@@ -41,11 +41,21 @@
                         <td>{{$no++}}</td>
                         <td>{{$row->nama}}</td>
                         <td>{{$row->username}}</td>
-                        <td>{{$row->roless}}</td>
+                        <td>{{$row->roles}}</td>
+                        {{-- <td>{{$row->status}}</td> --}}
                         <td>
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            {{-- <a href="" class="btn btn-danger"> --}}
+                                <form action="/superadmin/user/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+                                    @csrf
+                                    <input type="hidden" name="status" value="off">
+                                    {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Apa anda yakin ingin menghapus data ini?')">Delete</button>
+                                </form>
+                                {{-- Delete
+                            </a> --}}
                         </td>
                     </tr>
                 @empty

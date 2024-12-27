@@ -13,7 +13,12 @@ class AdminController extends Controller
     {
         $query = $request->input('query');
 
-        $data = Admin::where('nama', 'like', '%' . $query . '%')->get();
+        // $data = Admin::where('status', 'on')->orWhere('nama', 'like', '%' . $query . '%')->get();
+        $data = Admin::where('status', 'on')
+            ->when(!empty($query), function ($q) use ($query) {
+                $q->orWhere('nama', 'like', '%' . $query . '%');
+            })
+            ->get();
         return view('superAdmin.akun.index', compact('data'));
     }
     public function create()
@@ -42,5 +47,13 @@ class AdminController extends Controller
         ]);
 
         return redirect()->route('user.data')->with('success', 'Data berhasil ditambahkan');
+    }
+
+    // update status jadi off
+    public function updateStatus(Request $request, $id){
+        $data = Admin::find($id);
+        $data->update(['status' => $request->status]);
+
+        return redirect()->back()->with('status', 'Delete Success');
     }
 }

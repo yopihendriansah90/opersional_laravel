@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            // AdminSeeder::class,
-            //     JenisKendaraanSeeder::class,
-            //     KendaraanSeeder::class,
-            DriverKendaraanSeeder::class,
+            AdminSeeder::class,
+            JenisKendaraanSeeder::class,
+            KendaraanSeeder::class,
+            // DriverKendaraanSeeder::class,
         ]);
     }
 }

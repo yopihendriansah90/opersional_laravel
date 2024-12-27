@@ -18,21 +18,24 @@ class AdminSeeder extends Seeder
             'nama' => 'Super Admin',
             'username' => 'superadmin',
             'password' => bcrypt('password'),
-            'roles' => 'superadmin'
+            'roles' => 'superadmin',
+            'status' => 'on',
         ]);
 
         Admin::create([
             'nama' => ' Admin',
             'username' => 'admin',
             'password' => bcrypt('password'),
-            'roles' => 'admin'
+            'roles' => 'admin',
+            'status' => 'on',
         ]);
 
         Admin::create([
             'nama' => ' Operasional',
             'username' => 'operasional',
             'password' => bcrypt('password'),
-            'roles' => 'operasional'
+            'roles' => 'operasional',
+            'status' => 'on',
         ]);
 
 
@@ -40,14 +43,16 @@ class AdminSeeder extends Seeder
             'nama' => ' Mekanik',
             'username' => 'mekanik',
             'password' => bcrypt('password'),
-            'roles' => 'mekanik'
+            'roles' => 'mekanik',
+            'status' => 'on',
         ]);
 
         Admin::create([
             'nama' => ' Driver',
             'username' => 'driver',
             'password' => bcrypt('password'),
-            'roles' => 'driver'
+            'roles' => 'driver',
+            'status' => 'on',
         ]);
     }
 }
