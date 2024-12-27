@@ -42,6 +42,7 @@ Route::group([
             Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin,admin'); //middleware('roles:superadmin,admin') penggunaan untuk menambahkan akses yang di setujui
             Route::get('/superadmin/user/create', 'create')->name('user.create');
             Route::post('/superadmin/user/create', 'store');
+            Route::post('/superadmin/user/delete/{id}', 'updateStatus');
         });
         // KENDARAAN
         Route::controller(KendaraanController::class)->group(function () {
