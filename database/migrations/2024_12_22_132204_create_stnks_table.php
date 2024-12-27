@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('biaya_admin_stnk');
             $table->float('biaya_admin_tnkb');
             $table->float('transport');
+            $table->enum('status', ['on', 'off'])->default('on');
 
             $table->foreign('id_kendaraan')->references('id')->on('kendaraans');
             $table->timestamps();

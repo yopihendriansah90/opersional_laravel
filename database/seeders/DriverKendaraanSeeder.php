@@ -17,11 +17,13 @@ class DriverKendaraanSeeder extends Seeder
             'id_kendaraan' => 1,
             'id_driver' => 1,
             'tipe_driver' => 'tetap',
+            'status' => 'on',
         ]);
         DriverKendaraan::create([
             'id_kendaraan' => 2,
             'id_driver' => 2,
             'tipe_driver' => 'cadangan',
+            'status' => 'on',
         ]);
     }
 }

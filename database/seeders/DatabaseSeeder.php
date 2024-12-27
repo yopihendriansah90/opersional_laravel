@@ -28,7 +28,9 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             JenisKendaraanSeeder::class,
             KendaraanSeeder::class,
-            // DriverKendaraanSeeder::class,
+            DriverSeeder::class,
+            DriverKendaraanSeeder::class,
+
         ]);
     }
 }

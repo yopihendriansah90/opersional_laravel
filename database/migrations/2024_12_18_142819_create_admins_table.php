@@ -17,11 +17,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->enum('roles', ['superadmin', 'admin', 'operasional', 'driver', 'mekanik']);
-<<<<<<< HEAD
             $table->enum('status', ['on', 'off'])->default('on');
-=======
-            $table->enum('status', ['on','off'])->default('on');
->>>>>>> 6130dc9f074a529ae86f67d20f80ebc3224b552c
             $table->rememberToken();
             $table->timestamps();
         });

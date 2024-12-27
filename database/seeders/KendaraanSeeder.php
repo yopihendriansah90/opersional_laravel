@@ -22,7 +22,8 @@ class KendaraanSeeder extends Seeder
             'warna_tnbk' => 'Merah',
             'no_rangka' => 'SDFDSFXXX',
             'no_mesin' => 'SDFDSFXXX',
-            'isi_silinder' => 120
+            'isi_silinder' => 120,
+            'status' => 'on',
         ]);
         Kendaraan::create([
             'no_pintu' => '11102',
@@ -32,7 +33,8 @@ class KendaraanSeeder extends Seeder
             'warna_tnbk' => 'Merah',
             'no_rangka' => 'SDFDSFXXX',
             'no_mesin' => 'SDFDSFXXX',
-            'isi_silinder' => 120
+            'isi_silinder' => 120,
+            'status' => 'on',
         ]);
     }
 }

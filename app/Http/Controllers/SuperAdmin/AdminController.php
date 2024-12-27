@@ -49,7 +49,7 @@ class AdminController extends Controller
         return redirect()->route('user.data')->with('success', 'Data berhasil ditambahkan');
     }
 
-    // update status jadi off
+    // update status jadi off di buat untuk update
     public function updateStatus(Request $request, $id){
         $data = Admin::find($id);
         $data->update(['status' => $request->status]);

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('tipe_driver', ['tetap', 'cadangan']);
             $table->foreign('id_kendaraan')->references('id')->on('kendaraans');
             $table->foreign('id_driver')->references('id')->on('drivers');
-
+            $table->enum('status', ['on', 'off'])->default('on');
 
             $table->timestamps();
         });

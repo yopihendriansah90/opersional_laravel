@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('no_mesin');
             $table->integer('isi_silinder');
             $table->foreign('id_jenis_kendaraan')->references('id')->on('jenis_kendaraans');
+            $table->enum('status', ['on', 'off'])->default('on');
             $table->timestamps();
         });
     }

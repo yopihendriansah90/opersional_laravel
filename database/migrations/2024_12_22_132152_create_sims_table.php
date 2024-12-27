@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('foto_sim');
             $table->string('jenis_sim');
             $table->date('masa_berlaku');
+            $table->enum('status', ['on', 'off'])->default('on');
 
             $table->foreign('id_driver')->references('id')->on('drivers');
 

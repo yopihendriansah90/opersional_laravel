@@ -21,6 +21,7 @@ class DriverSeeder extends Seeder
             'no_hp' => '083116546574',
             'alamat' => 'ini adalah alamat saya',
             'email' => 'doni@mail.com',
+            'status' => 'on',
         ]);
         Driver::create([
             'id_user' => 2,
@@ -30,6 +31,7 @@ class DriverSeeder extends Seeder
             'no_hp' => '083116546572',
             'alamat' => 'ini adalah alamat saya',
             'email' => 'yono@mail.com',
+            'status' => 'on',
         ]);
     }
 }

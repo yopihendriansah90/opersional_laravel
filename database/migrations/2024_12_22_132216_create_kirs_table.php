@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('no_uji_kir');
             $table->date('masa_berlaku');
             $table->foreign('id_kendaraan')->references('id')->on('kendaraans');
+            $table->enum('status', ['on', 'off'])->default('on');
             $table->timestamps();
         });
     }

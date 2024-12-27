@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('jenis_kendaraans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->enum('status', ['on', 'off'])->default('on');
             $table->timestamps();
         });
     }

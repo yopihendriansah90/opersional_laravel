@@ -16,9 +16,11 @@ class JenisKendaraanSeeder extends Seeder
         //
         JenisKendaraan::create([
             'nama' => 'Truck Mixer',
+            'status' => 'on',
         ]);
         JenisKendaraan::create([
             'nama' => 'Dump Truck',
+            'status' => 'on',
         ]);
     }
 }

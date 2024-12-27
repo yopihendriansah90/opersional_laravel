@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('foto_ktp');
             $table->string('no_hp')->unique();
             $table->text('alamat');
+            $table->enum('status', ['on', 'off'])->default('on');
             $table->string('email')->unique();
 
             $table->foreign('id_user')->references('id')->on('admins');
