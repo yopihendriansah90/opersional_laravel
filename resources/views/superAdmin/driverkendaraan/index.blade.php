@@ -17,7 +17,7 @@
           </div> --}}
 
           <div class="card-body">
-            <h5 class="card-title">Data Driver <span>| Today</span></h5>
+            <h5 class="card-title">Data Driver Kendaraan<span>| Today</span></h5>
             <a href="{{ route('driver.create') }}" class="btn btn-success">Tambah Driver</a>
             <table class="table table-border datatable" style=" width: 100%; white-space: nowrap;">
               <thead>

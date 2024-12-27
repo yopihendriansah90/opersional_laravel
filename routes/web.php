@@ -45,6 +45,8 @@ Route::group([
         // KENDARAAN
         Route::controller(KendaraanController::class)->group(function () {
             Route::get('/superadmin/kendaraan', 'index')->name('kendaraan.data');
+            Route::get('/superadmin/kendaraan/create', 'create')->name('kendaraan.create');
+            Route::post('/superadmin/kendaraan/create', 'store'); //untuk mengarakan ke penyimpanan data
         });
 
         //JENIS KENDARAAN
@@ -57,6 +59,7 @@ Route::group([
         //DRIVER
         Route::controller(DriverController::class)->group(function () {
             Route::get('/superadmin/driver', 'index')->name('driver.data');
+            Route::get('/superadmin/driver/create', 'create')->name('driver.create');
         });
     });
 });

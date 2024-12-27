@@ -15,4 +15,8 @@ class DriverController extends Controller
         $data = Driver::where('nama', 'like', '%' . $query . '%')->get();
         return view('superAdmin.driver.index', compact('data'));
     }
+    public function create()
+    {
+        return view('superAdmin.driver.create');
+    }
 }
