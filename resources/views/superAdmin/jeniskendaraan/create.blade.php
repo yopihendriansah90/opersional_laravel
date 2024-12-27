@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <a href="{{url()->previous()}}" class="btn btn-secondary">Back</a>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a href="{{url()->previous()}}" class="btn btn-secondary">Back</a>
                 </div>
             </form><!-- End No Labels Form -->
 

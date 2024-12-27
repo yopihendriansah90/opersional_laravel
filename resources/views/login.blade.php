@@ -1,47 +1,3 @@
-{{-- @extends('template')
-@section('content')
-<div class="row">
-    <div class="col-md-4 offset-md-4 mt-5">
-        <div class="card">
-            <div class="card-header bg-dark text-light">
-                Login
-            </div>
-            <div class="card-body p-2">
-                <form action="" method="post">
-                    @csrf
-                    <div class="form-group">
-                      <input type="text"
-                        class="form-control{{ $errors->has('username') ? ' is-invalid':'' }}"
-                        name="username"
-                        placeholder="Username" />
-                        @error('username')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                      <input type="password"
-                        class="form-control{{ $errors->has('password') ? ' is-invalid':'' }}"
-                        name="password"
-                        placeholder="Password" />
-                        @error('password')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="form-check form-group">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" name="remember">
-                            Remember Me
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
 
 
 <!DOCTYPE html>
@@ -75,13 +31,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -115,7 +65,7 @@
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        {{-- <span class="input-group-text" id="inputGroupPrepend">@</span> --}}
                         <input type="text" name="username" class="form-control {{ $errors->has('username') ? ' is-invalid':'' }}" id="yourUsername" required>
                         {{-- <div class="invalid-feedback">Please enter your username.</div> --}}
                         @error('username')

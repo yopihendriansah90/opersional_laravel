@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class DriverKendaraan extends Model
 {
     use HasFactory;
+    protected $guarded = []; //dibuat
+    public function driverkendaraan() // buat fungsi
+    {
+        // $this->belongsTo(Driver::class, 'id_user', 'id'); //mendeklarasikan forigen key jenisk kendaraan
+        return $this->hasOne(Driver::class . 'id_user', 'id');
+    }
 }
