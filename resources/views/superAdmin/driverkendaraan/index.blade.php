@@ -23,14 +23,13 @@
               <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Kendaraan</th>
+                  <th scope="col">Nomor Pintu</th>
+                  <th scope="col">Nomor Polisi</th>
                   <th scope="col">Nama Driver</th>
-                  <th scope="col">Username</th>
-                  <th scope="col">Nomor KTP</th>
-                  <th scope="col">Foto KTP</th>
-                  <th scope="col">Nomor HP</th>
-                  <th scope="col">Alamat</th>
-                  <th scope="col">Email</th>
+                  <th scope="col">Tipe Driver</th>
+                  <th scope="col">Jenis Kendaraan</th>
+                  <th scope="col">Status</th>
+
 
                   <th scope="col">Action</th>
                 </tr>
@@ -43,19 +42,21 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->kendaraan->id}}</td>
-                        <td>{{$row->id_driver}}</td>
+                        <td>{{$row->kendaraan->no_pintu}}</td>
+                        <td>{{$row->kendaraan->no_polisi}}</td>
                         <td>{{$row->driver->nama}}</td>
-                        <td>{{$row->tipe_driver}}</td>
-                        <td>{{$row->foto_ktp}}</td>
-                        <td>{{$row->no_hp}}</td>
-                        <td>{{$row->alamat}}</td>
-                        <td>{{$row->email}}</td>
-
+                        <td class="text-capitalize">{{$row->tipe_driver}}</td>
+                        <td>{{$row->kendaraan->jeniskendaraan->nama}}</td>
+                        <td class="text-uppercase">{{$row->status}}</td>
                         <td>
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                             <!-- Tombol Hapus -->
+                            <form action="{{ route('/superadmin/driverkendaraan/delete/$row->id) }}" method="DELETE">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 @empty

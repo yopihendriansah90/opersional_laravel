@@ -41,7 +41,13 @@
                         <td>
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <form action="/superadmin/jeniskendaraan/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+                                @csrf
+                                <input type="hidden" name="status" value="off">
+                                {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('Apa anda yakin ingin menghapus data ini?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @empty

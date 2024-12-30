@@ -16,6 +16,6 @@ class Kendaraan extends Model
     }
     public function driverkendaraan()
     {
-        return $this->hasMany(Driver::class, 'id_kendaraa', 'id');
+        return $this->hasMany(DriverKendaraan::class, 'id_kendaraan', 'id');
     }
 }

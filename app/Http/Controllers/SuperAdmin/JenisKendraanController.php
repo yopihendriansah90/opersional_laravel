@@ -35,4 +35,10 @@ class JenisKendraanController extends Controller
         ]);
         return redirect()->route('jeniskendaraan.data')->with('success', 'Data berhasil ditambahkan');
     }
+    public function updateStatus(Request $request, $id){
+        $data = JenisKendaraan::find($id);
+        $data->update(['status' => $request->status]);
+
+        return redirect()->back()->with('status', 'Delete Success');
+    }
 }

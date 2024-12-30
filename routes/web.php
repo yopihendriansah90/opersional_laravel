@@ -56,6 +56,7 @@ Route::group([
             Route::get('/superadmin/jeniskendaraan', 'index')->name('jeniskendaraan.data');
             Route::get('/superadmin/jeniskendaraan/create', 'create')->name('jeniskendaraan.create');
             Route::post('/superadmin/jeniskendaraan/create', 'store');
+            Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
         });
 
         //DRIVER
@@ -64,10 +65,11 @@ Route::group([
             Route::get('/superadmin/driver/create', 'create')->name('driver.create');
         });
 
-        //DRIVER
+        //DRIVER KENDARAAN
         Route::controller(DriverKendaraanController::class)->group(function () {
             Route::get('/superadmin/driverkendaraan', 'index')->name('driverkendaraan.data');
             // Route::get('/superadmin/driver/create', 'create')->name('driverkendaraan.create');
+
         });
     });
 
