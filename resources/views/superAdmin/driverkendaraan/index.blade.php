@@ -52,9 +52,8 @@
                             <a href="" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
                              <!-- Tombol Hapus -->
-                            <form action="{{ route('/superadmin/driverkendaraan/delete/$row->id) }}" method="DELETE">
+                            <form action="/superadmin/driverkendaraan/delete/{{$row->id}}" method="POST" class="form-basic d-inline">
                                 @csrf
-                                @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
                             </form>
                         </td>

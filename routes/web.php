@@ -40,8 +40,12 @@ Route::group([
         Route::controller(AdminController::class)->group(function () {
             // Route::post('logout', 'Auth\AuthController@logout')->name('superadmin.logout');
             Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin,admin'); //middleware('roles:superadmin,admin') penggunaan untuk menambahkan akses yang di setujui
+            Route::get('/superadmin/user/{id}', 'show');
             Route::get('/superadmin/user/create', 'create')->name('user.create');
             Route::post('/superadmin/user/create', 'store');
+            Route::get('/superadmin/user/update/{id}', 'edit');
+            Route::post('/superadmin/user/update/{id}', 'update');
+            Route::post('/superadmin/user/restore/{id}', 'restore');
             Route::post('/superadmin/user/delete/{id}', 'updateStatus');
         });
         // KENDARAAN
@@ -68,8 +72,7 @@ Route::group([
         //DRIVER KENDARAAN
         Route::controller(DriverKendaraanController::class)->group(function () {
             Route::get('/superadmin/driverkendaraan', 'index')->name('driverkendaraan.data');
-            // Route::get('/superadmin/driver/create', 'create')->name('driverkendaraan.create');
-
+            Route::post('/superadmin/driverkendaraan/delete/{id}', 'delete');
         });
     });
 

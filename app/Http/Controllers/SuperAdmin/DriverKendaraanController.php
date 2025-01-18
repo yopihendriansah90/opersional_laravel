@@ -19,4 +19,11 @@ class DriverKendaraanController extends Controller
         })->get();
         return view('superAdmin.driverkendaraan.index', compact('data'));
     }
+    public function delete($id)
+    {
+        $data = DriverKendaraan::find($id);
+        $data->delete();
+
+        return redirect()->back()->with('status', 'Delete berhasil');
+    }
 }
