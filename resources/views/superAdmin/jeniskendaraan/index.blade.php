@@ -18,7 +18,7 @@
 
           <div class="card-body">
             <h5 class="card-title">Data Jenis Kendaraan <span>| Today</span></h5>
-            <a href="{{ route('jeniskendaraan.create') }}" class="btn btn-success">Create Jenis Kendaraan</a>
+            <a href="{{ route('jeniskendaraan.create') }}" class="btn btn-success">Tambah Jenis Kendaraan</a>
             <table class="table table-border datatable" style=" width: 100%; white-space: nowrap;">
               <thead>
                 <tr>
@@ -39,15 +39,37 @@
                         <td>{{$row->nama}}</td>
 
                         <td>
-                            <a href="" class="btn btn-success">Edit</a>
+                            <a href="/superadmin/jeniskendaraan/update/{{$row->id}}" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
-                            <form action="/superadmin/jeniskendaraan/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+
+
+
+                            @if ($row->deleted_at===null)
+                                <form action="/superadmin/jeniskendaraan/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+                                    @csrf
+                                    <input type="hidden" name="status" value="off">
+                                    {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Apa anda yakin ingin menghapus data ini?')">Delete</button>
+                                </form>
+
+                            @else
+
+
+                            {{-- awal untuk restore soft delete --}}
+
+                            <form action="/superadmin/jeniskendaraan/restore/{{$row->id}}" method="post" class="form-basic d-inline">
                                 @csrf
                                 <input type="hidden" name="status" value="off">
                                 {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
-                                <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('Apa anda yakin ingin menghapus data ini?')">Delete</button>
+                                <button type="submit" class="btn btn-warning"
+                                        onclick="return confirm('Apa anda yakin ingin merestore data ini?')">Restore</button>
                             </form>
+                            {{-- akhir untuk restore soft delete --}}
+
+
+                            @endif
+
                         </td>
                     </tr>
                 @empty

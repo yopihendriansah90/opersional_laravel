@@ -13,7 +13,6 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         // awal modifikasi soft delete
-        $query = $request->input('query');
 
 
         $query = $request->input('query');

@@ -40,7 +40,7 @@ Route::group([
         Route::controller(AdminController::class)->group(function () {
             // Route::post('logout', 'Auth\AuthController@logout')->name('superadmin.logout');
             Route::get('/superadmin/user', 'index')->name('user.data')->middleware('roles:superadmin,admin'); //middleware('roles:superadmin,admin') penggunaan untuk menambahkan akses yang di setujui
-            Route::get('/superadmin/user/{id}', 'show');
+            // Route::get('/superadmin/user/{id}', 'show');
             Route::get('/superadmin/user/create', 'create')->name('user.create');
             Route::post('/superadmin/user/create', 'store');
             Route::get('/superadmin/user/update/{id}', 'edit');
@@ -60,7 +60,12 @@ Route::group([
             Route::get('/superadmin/jeniskendaraan', 'index')->name('jeniskendaraan.data');
             Route::get('/superadmin/jeniskendaraan/create', 'create')->name('jeniskendaraan.create');
             Route::post('/superadmin/jeniskendaraan/create', 'store');
-            Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
+            Route::get('/superadmin/jeniskendaraan/update/{id}', 'edit');
+            Route::post('/superadmin/jeniskendaraan/update/{id}', 'update');
+
+            Route::post('/superadmin/jeniskendaraan/restore/{id}', 'restore');
+            // Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
+            Route::post('/superadmin/jeniskendaraan/delete/{id}', 'delete');
         });
 
         //DRIVER

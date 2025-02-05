@@ -5,13 +5,13 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-            <h5 class="card-title">Tambah Jensik Kendaraan</h5>
+            <h5 class="card-title">Edit Jenis Kendaraan</h5>
 
             <!-- No Labels Form -->
             <form class="row g-3" action="" method="POST">
                 @csrf
                 <div class="col-md-12">
-                    <input type="text" name="nama" class="form-control" placeholder="Jenis Kendaraan">
+                    <input type="text" name="nama" class="form-control" placeholder="Jenis Kendaraan" value="{{$data->nama}}">
                     @error('nama')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -19,7 +19,7 @@
 
                 <div class="text-end">
                     <a href="{{url()->previous()}}" class="btn btn-secondary">Back</a>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form><!-- End No Labels Form -->
 
