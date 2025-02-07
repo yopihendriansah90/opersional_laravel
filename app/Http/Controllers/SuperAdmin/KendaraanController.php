@@ -15,6 +15,7 @@ class KendaraanController extends Controller
         $query = $request->input('query');
 
         $data = Kendaraan::where('no_polisi', 'like', '%' . $query . '%')->get();
+
         return view('superAdmin.kendaraan.index', compact('data'));
     }
 

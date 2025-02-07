@@ -24,7 +24,7 @@
                 <tr>
                   <th scope="col">No</th>
                   <th scope="col">Nama Jensi Kendaraan</th>
-
+                  <th scope="col">Status</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -36,16 +36,26 @@
                 @forelse ( $data as $row )
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$row->nama}}</td>
+                        <td class="text-capitalize">{{$row->nama}}</td>
+                        <td class="text-uppercase">{{$row->status}}</td>
 
                         <td>
                             <a href="/superadmin/jeniskendaraan/update/{{$row->id}}" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
+                            {{-- awalan untuk update status --}}
 
+                            <form action="/superadmin/jeniskendaraan/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+                                @csrf
+                                <input type="hidden" name="status" value="off">
+                                {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                <button type="submit" class="btn btn-warning"
+                                        onclick="return confirm('Apa anda yakin ingin mengubah status jenis kendaraan?')">{{$row->status==='on'?'Off':'On'}}</button>
+                            </form>
+                            {{-- akhiran untuk update status --}}
 
-
+                        {{-- untuk softdelete --}}
                             @if ($row->deleted_at===null)
-                                <form action="/superadmin/jeniskendaraan/delete/{{$row->id}}" method="post" class="form-basic d-inline">
+                                <form action="/superadmin/jeniskendaraan/destroy/{{$row->id}}" method="post" class="form-basic d-inline">
                                     @csrf
                                     <input type="hidden" name="status" value="off">
                                     {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
@@ -66,8 +76,6 @@
                                         onclick="return confirm('Apa anda yakin ingin merestore data ini?')">Restore</button>
                             </form>
                             {{-- akhir untuk restore soft delete --}}
-
-
                             @endif
 
                         </td>

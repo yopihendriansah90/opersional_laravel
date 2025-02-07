@@ -25,6 +25,9 @@
                      </select>
 
                 </div>
+
+
+
                 <div class="col-md-12">
                     <input type="text" name="no_polisi" class="form-control" placeholder="Nomor Polisi/Plat Nomor">
                     @error('no_polisi')

@@ -18,8 +18,11 @@ class JenisKendraanController extends Controller
             })
             ->get();
 
+
         return view('superAdmin.jeniskendaraan.index', compact('data'));
     }
+
+
 
     public function create()
     {
@@ -40,12 +43,19 @@ class JenisKendraanController extends Controller
         ]);
         return redirect()->route('jeniskendaraan.data')->with('success', 'Data berhasil ditambahkan');
     }
-    // public function updateStatus(Request $request, $id){
-    //     $data = JenisKendaraan::find($id);
-    //     $data->update(['status' => $request->status]);
+    public function updateStatus(Request $request, $id)
+    {
+        $data = JenisKendaraan::find($id);
 
-    //     return redirect()->back()->with('status', 'Delete Success');
-    // }
+        // Membalik status
+        $newStatus = $data->status === 'on' ? 'off' : 'on';
+
+        $data->update(['status' => $newStatus]);
+
+        return redirect()->back()->with('status', 'Status berhasil diubah.');
+    }
+
+
 
     public function edit($id) //digunakan untuk edit data jenis kendaran
     {
@@ -74,7 +84,6 @@ class JenisKendraanController extends Controller
         $data->update($updateData);
         return redirect()->route('jeniskendaraan.data')->with('status', 'Berhasil diupdate');
     }
-
 
 
     // public function delete($id) // digunakan untuk menghapus data jenisk kendraan

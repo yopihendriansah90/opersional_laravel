@@ -62,10 +62,11 @@ Route::group([
             Route::post('/superadmin/jeniskendaraan/create', 'store');
             Route::get('/superadmin/jeniskendaraan/update/{id}', 'edit');
             Route::post('/superadmin/jeniskendaraan/update/{id}', 'update');
+            Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
 
             Route::post('/superadmin/jeniskendaraan/restore/{id}', 'restore');
             // Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
-            Route::post('/superadmin/jeniskendaraan/delete/{id}', 'delete');
+            Route::post('/superadmin/jeniskendaraan/destroy/{id}', 'delete');
         });
 
         //DRIVER
