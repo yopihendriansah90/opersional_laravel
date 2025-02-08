@@ -52,7 +52,8 @@ Route::group([
         Route::controller(KendaraanController::class)->group(function () {
             Route::get('/superadmin/kendaraan', 'index')->name('kendaraan.data');
             Route::get('/superadmin/kendaraan/create', 'create')->name('kendaraan.create');
-            Route::post('/superadmin/kendaraan/create', 'store'); //untuk mengarakan ke penyimpanan data
+            Route::post('/superadmin/kendaraan/create', 'store'); //untuk mengarakan ke penyimpa
+            Route::get('/superadmin/kendaraan/edit/{id}', 'edit');
         });
 
         //JENIS KENDARAAN

@@ -17,7 +17,7 @@
                   <th scope="col">Warna TNKB</th>
                   <th scope="col">Nomor Rangka</th>
                   <th scope="col">Nomor Mesin</th>
-                  <th scope="col">Isi Sislinder</th>
+                  <th scope="col">Isi Silinder</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
@@ -39,7 +39,7 @@
                         <td>{{$row->no_mesin}}</td>
                         <td>{{$row->isi_silinder}} CC</td>
                         <td>
-                            <a href="" class="btn btn-success">Edit</a>
+                            <a href="/superadmin/kendaraan/edit/{{$row->id}}" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
                             <a href="" class="btn btn-danger">Delete</a>
                         </td>

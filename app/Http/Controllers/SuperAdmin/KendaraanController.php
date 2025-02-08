@@ -21,7 +21,7 @@ class KendaraanController extends Controller
 
     public function create()
     {
-        $jeniskendaraan = JenisKendaraan::all();
+        $jeniskendaraan = JenisKendaraan::where('status', 'on')->get();
         return view('superAdmin.kendaraan.create', compact('jeniskendaraan'));
     }
 
@@ -48,9 +48,17 @@ class KendaraanController extends Controller
             'warna_tnbk' => $request->warna_tnbk,
             'no_rangka' => $request->no_rangka,
             'no_mesin' => $request->no_mesin,
-            'isi_silinder' => $request->isi_silinder
+            'isi_silinder' => (int)$request->isi_silinder
 
         ]);
         return redirect()->route('kendaraan.data')->with('success', 'Data berhasil diinput');
+    }
+
+    public function edit($id)
+    {
+        $jeniskendaraan = JenisKendaraan::where('status', 'on')->get();
+        $kendaraan = Kendaraan::find($id);
+        // dd($kendaraan);
+        return view('superAdmin.kendaraan.edit', compact('jeniskendaraan', 'kendaraan'));
     }
 }
