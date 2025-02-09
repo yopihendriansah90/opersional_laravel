@@ -54,6 +54,9 @@ Route::group([
             Route::get('/superadmin/kendaraan/create', 'create')->name('kendaraan.create');
             Route::post('/superadmin/kendaraan/create', 'store'); //untuk mengarakan ke penyimpa
             Route::get('/superadmin/kendaraan/edit/{id}', 'edit');
+            Route::post('/superadmin/kendaraan/edit/{id}', 'update');
+            Route::post('/superadmin/kendaraan/restore/{id}', 'restore');
+            Route::post('/superadmin/kendaraan/destroy/{id}', 'delete');
         });
 
         //JENIS KENDARAAN
@@ -66,7 +69,6 @@ Route::group([
             Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
 
             Route::post('/superadmin/jeniskendaraan/restore/{id}', 'restore');
-            // Route::post('/superadmin/jeniskendaraan/delete/{id}', 'updateStatus');
             Route::post('/superadmin/jeniskendaraan/destroy/{id}', 'delete');
         });
 

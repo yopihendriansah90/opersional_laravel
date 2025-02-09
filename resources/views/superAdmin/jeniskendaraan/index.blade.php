@@ -77,6 +77,7 @@
                             </form>
                             {{-- akhir untuk restore soft delete --}}
                             @endif
+                        {{-- akhiran soft delete --}}
 
                         </td>
                     </tr>

@@ -41,7 +41,34 @@
                         <td>
                             <a href="/superadmin/kendaraan/edit/{{$row->id}}" class="btn btn-success">Edit</a>
                             <a href="" class="btn btn-info">View</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+
+                            {{-- untuk softdelete --}}
+                            @if ($row->deleted_at===null)
+                                <form action="/superadmin/kendaraan/destroy/{{$row->id}}" method="post" class="form-basic d-inline">
+                                    @csrf
+                                    <input type="hidden" name="status" value="off">
+                                    {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                    <button type="submit" class="btn btn-danger"
+                                            onclick="return confirm('Apa anda yakin ingin menghapus data ini?')">Delete</button>
+                                </form>
+
+                            @else
+
+
+                            {{-- awal untuk restore soft delete --}}
+
+                            <form action="/superadmin/kendaraan/restore/{{$row->id}}" method="post" class="form-basic d-inline">
+                                @csrf
+                                <input type="hidden" name="status" value="off">
+                                {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                <button type="submit" class="btn btn-warning"
+                                        onclick="return confirm('Apa anda yakin ingin merestore data ini?')">Restore</button>
+                            </form>
+                            {{-- akhir untuk restore soft delete --}}
+                            @endif
+                        {{-- akhiran soft delete --}}
+
+
                         </td>
                     </tr>
                 @empty

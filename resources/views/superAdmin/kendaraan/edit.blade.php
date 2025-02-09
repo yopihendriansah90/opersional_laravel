@@ -5,10 +5,11 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-            <h5 class="card-title">Create Data Kendaraan</h5>
+            <h5 class="card-title">Edit Data Kendaraan</h5>
             <!-- No Labels Form -->
             <form class="row g-3" action="" method="POST">
                 @csrf
+
                 <div class="col-md-12">
 
                     <input type="text" name="no_pintu" class="form-control" placeholder="Nomor Pintu" value="{{$kendaraan->no_pintu}}">
@@ -17,8 +18,9 @@
                     @enderror
                 </div>
                 <div class="col-md-12">
+
                     <select name="id_jenis_kendaraan" id="" class="form-control">
-                        <option disabled>Pilih Jenis Kendaraan</option>
+                        <option selected value="{{$kendaraan->jenisKendaraan->id}}"> {{$kendaraan->jenisKendaraan->nama}}</option>
                         @foreach ( $jeniskendaraan as $row )
 
                         <option value="{{ $row->id }}" {{ $row->id == $kendaraan->jenis_kendaraan_id ? 'selected' : '' }}>{{ $row->nama }}</option>
@@ -42,7 +44,17 @@
                     @enderror
                 </div>
                 <div class="col-md-12">
-                    <input type="text" name="warna_tnbk" class="form-control" placeholder="Warna TNKB" value="{{$kendaraan->warna_tnbk}}">
+                    {{-- <input type="text" name="warna_tnbk" class="form-control" placeholder="Warna TNKB" value="{{$kendaraan->warna_tnbk}}"> --}}
+
+
+                    <select name="warna_tnbk" id="" class="form-control">
+                        <option selected value="{{$kendaraan->warna_tnbk}}">{{$kendaraan->warna_tnbk}}</option>
+                        <option value="Hitam">Hitam</option>
+                        <option value="Putih">Putih</option>
+                        <option value="Kuning">Kuning</option>
+
+                     </select>
+
                     @error('warna_tnbk')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -68,13 +80,14 @@
                 </div>
 
                 <div class="row mt-3">
-                    <div class="text-center">
+
+                    <div class="text-end">
                         <a href="{{url()->previous()}}" class="btn btn-danger">Back</a>
 
 
 
                         <button type="reset" class="btn btn-secondary ">Reset</button>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
 
 
                      </div>

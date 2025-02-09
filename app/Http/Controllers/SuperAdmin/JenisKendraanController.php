@@ -94,9 +94,9 @@ class JenisKendraanController extends Controller
     //     return redirect()->back()->with('status', 'Delete berhasil');
     // }
 
+
+
     // penggunaan soft delete
-
-
     public function delete(Request $request, $id)
     {
         $datadelet = JenisKendaraan::find($id);
