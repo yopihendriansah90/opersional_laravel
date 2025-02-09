@@ -53,18 +53,16 @@
                                 </form>
 
                             @else
+                                {{-- awal untuk restore soft delete --}}
 
-
-                            {{-- awal untuk restore soft delete --}}
-
-                            <form action="/superadmin/kendaraan/restore/{{$row->id}}" method="post" class="form-basic d-inline">
-                                @csrf
-                                <input type="hidden" name="status" value="off">
-                                {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
-                                <button type="submit" class="btn btn-warning"
-                                        onclick="return confirm('Apa anda yakin ingin merestore data ini?')">Restore</button>
-                            </form>
-                            {{-- akhir untuk restore soft delete --}}
+                                <form action="/superadmin/kendaraan/restore/{{$row->id}}" method="post" class="form-basic d-inline">
+                                    @csrf
+                                    <input type="hidden" name="status" value="off">
+                                    {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
+                                    <button type="submit" class="btn btn-warning"
+                                            onclick="return confirm('Apa anda yakin ingin merestore data ini?')">Restore</button>
+                                </form>
+                                {{-- akhir untuk restore soft delete --}}
                             @endif
                         {{-- akhiran soft delete --}}
 

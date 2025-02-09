@@ -10,7 +10,8 @@ class Kendaraan extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     public function jeniskendaraan()
     {
         // $this->hasMany(JenisKendaraan::class, 'id_jenis_kendaraan', 'id'); // menghubungkan foreigen key dari kendaraan (id_jenis_kendaraan) ke table jenis kendaraan

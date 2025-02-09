@@ -14,8 +14,7 @@ class KendaraanController extends Controller
     public function index(Request $request)
     {
         $query = $request->input('query');
-
-        $data = Kendaraan::with('jenisKendaraan')->where('no_polisi', 'like', '%' . $query . '%')->get();
+        $data = Kendaraan::withTrashed('deleted_at')->with('jenisKendaraan')->where('no_polisi', 'like', '%' . $query . '%')->get();
 
         return view('superAdmin.kendaraan.index', compact('data'));
     }
